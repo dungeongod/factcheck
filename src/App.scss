@@ -1,0 +1,163 @@
+// Reset and base styles
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  width: 100%;
+  height: 100vh;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+// Main layout with Figma ratios (800px:640px = 5:4)
+.main-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+ 
+  background-size: cover;
+  position: relative;
+}
+
+.content-section {
+  display: flex;
+  flex: 1;
+  height: 100vh;
+}
+
+.left-section {
+  flex: 5;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-y: auto;
+  background: url('./assets/background-gradient.svg') no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+.notification-row {
+  display: flex;
+  align-items: flex-start;
+  // gap: 32px;
+  margin-bottom: 72px;
+}
+
+.whale-analytics-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 62px 0 60px;
+}
+
+.right-section {
+  flex: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background: #ffffff;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.testimonials-section {
+  width: 100%;
+  padding: 40px 0;
+  margin-top: 60px;
+}
+
+// Responsive design
+@media (max-width: 1200px) {
+  .content-section {
+    flex-direction: column;
+    min-height: auto;
+    height: auto;
+  }
+  
+  .left-section {
+    flex: none;
+    padding: 32px;
+    min-height: 100vh;
+    height: auto;
+  }
+  
+  .right-section {
+    flex: none;
+    padding: 32px;
+    position: relative;
+    height: auto;
+    min-height: 100vh;
+  }
+  
+  .notification-row {
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 60px;
+  }
+
+  .whale-analytics-section {
+    padding: 0;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-layout {
+    overflow-x: hidden;
+  }
+
+  .left-section,
+  .right-section {
+    padding: 24px;
+    min-height: auto;
+  }
+  
+  .notification-row {
+    margin-bottom: 40px;
+  }
+  
+  .testimonials-section {
+    padding: 40px 24px;
+    margin-top: 40px;
+  }
+
+  .whale-analytics-section {
+    margin-top: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .left-section,
+  .right-section {
+    padding: 16px;
+  }
+  
+  .testimonials-section {
+    padding: 24px 16px;
+    margin-top: 32px;
+  }
+
+  .notification-row {
+    margin-bottom: 32px;
+  }
+
+  .whale-analytics-section {
+    margin-top: 12px;
+  }
+}
+
+// Typography base
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+p {
+  line-height: 1.6;
+} 

@@ -1,0 +1,238 @@
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  max-width: 400px;
+  width: 100%;
+  padding: 0 24px;
+  
+  // Positioning: centered horizontally, slightly below center vertically
+  margin-top: 15vh; // Shifts below center line
+}
+
+.signup-headline {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 39px;
+  line-height: 120%;
+  letter-spacing: 0px;
+  color: #9ca3af;
+  margin-bottom: 32px;
+  text-align: left;
+}
+
+.signup-input-group {
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.signup-input {
+  width: 100%;
+  padding: 16px 20px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 120%;
+  letter-spacing: 0px;
+  color: #374151;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  &::placeholder {
+    color: #9ca3af;
+    transition: color 0.2s ease;
+  }
+  
+  // Requirement 6: Responsive on hover and click
+  &:hover {
+    border-color: #d1d5db;
+    background: #ffffff;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+  
+  &:focus {
+    border-color: #6366f1;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+    transform: translateY(-2px);
+    
+    &::placeholder {
+      color: #d1d5db;
+    }
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+  
+  // Error state
+  &.error {
+    border-color: #ef4444;
+    background: #fef2f2;
+    
+    &:focus {
+      border-color: #ef4444;
+      box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+    }
+  }
+  
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+  }
+}
+
+.signup-error {
+  display: block;
+  color: #ef4444;
+  font-size: 14px;
+  margin-top: 8px;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.signup-button {
+  width: 100%;
+  background: #19191A;
+  color: #FFFFFF;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 600; 
+  border-radius: 8px;
+  border: 1px solid #19191A;
+  padding: 18px 28px;
+  gap: 12px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-bottom: 42px;
+  position: relative;
+  overflow: hidden;
+  
+  &:hover:not(:disabled) {
+    background: #2a2a2b;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(25, 25, 26, 0.3);
+  }
+  
+  &:active:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(25, 25, 26, 0.2);
+  }
+  
+  &.submitting {
+    background: #6366f1;
+    cursor: not-allowed;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 16px;
+      width: 16px;
+      height: 16px;
+      margin-top: -8px;
+      border: 2px solid transparent;
+      border-top-color: #ffffff;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+  }
+  
+  &:disabled {
+    opacity: 0.7;
+    transform: none !important;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.signup-subtext {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 120%;
+  letter-spacing: 0px;
+  text-align: center;
+  color: #19191A;
+  margin: 0;
+  transition: color 0.2s ease;
+}
+
+// Responsive design for all browser screen sizes (Requirement 1)
+@media (max-width: 768px) {
+  .signup-form {
+    max-width: 350px;
+    padding: 0 16px;
+    margin-top: 10vh;
+  }
+  
+  .signup-headline {
+    font-size: 32px;
+    margin-bottom: 24px;
+  }
+  
+  .signup-input {
+    padding: 14px 16px;
+  }
+  
+  .signup-button {
+    padding: 16px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .signup-form {
+    max-width: 320px;
+    padding: 0 12px;
+    margin-top: 8vh;
+  }
+  
+  .signup-headline {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  .signup-input {
+    padding: 12px 14px;
+    font-size: 15px;
+  }
+  
+  .signup-button {
+    padding: 14px 20px;
+    font-size: 15px;
+  }
+  
+  .signup-subtext {
+    font-size: 15px;
+  }
+}
+
+// Large desktop screens
+@media (min-width: 1200px) {
+  .signup-form {
+    max-width: 450px;
+  }
+  
+  .signup-headline {
+    font-size: 42px;
+  }
+} 
