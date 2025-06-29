@@ -3,7 +3,7 @@
 A modern dashboard interface built with React and Vite, featuring notification management and whale watching analytics.
 
 ## 🔗 Live Website
-[View Live Demo](YOUR_LIVE_WEBSITE_URL_HERE)
+[View Live Demo](https://factcheck-tau.vercel.app/)
 
 ## 🚀 Getting Started
 
@@ -14,7 +14,7 @@ A modern dashboard interface built with React and Vite, featuring notification m
 ### Installation
 1. Clone the repository
 ```bash
-git clone <repository-url>
+git clone https://github.com/dungeongod/factcheck
 cd fackcheck
 ```
 
